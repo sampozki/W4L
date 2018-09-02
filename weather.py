@@ -22,7 +22,8 @@ def main():
 
     place = str(city + "," + country)
     try:
-        w = owm.weather_at_place(place).observation.get_weather()
+        observation = owm.weather_at_place(place)
+        w = observation.get_weather()
     except Exception as e:
         print(e)
         return False
