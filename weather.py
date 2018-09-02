@@ -23,7 +23,7 @@ def main():
     place = str(city + "," + country)
     observation = owm.weather_at_place(place)
     w = observation.get_weather()
-    condition = str(w).split('status=')[1][:-1].lower()
+    condition = str(w).split('status=')[1][:-1].lower().split(",")[0]
 
     if condition == "clear":
         text = "There is currently " + str(int(w.get_temperature('celsius')['temp'])) + \
