@@ -21,8 +21,11 @@ def main():
         city = sys.argv[1]
 
     place = str(city + "," + country)
-    observation = owm.weather_at_place(place)
-    w = observation.get_weather()
+    try:
+        w = owm.weather_at_place(place).observation.get_weather()
+    except Exception as e:
+        print(e)
+        return False
     condition = str(w).split('status=')[1][:-1].lower().split(",")[0]
 
     if condition == "clear":
