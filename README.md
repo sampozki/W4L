@@ -4,7 +4,7 @@ Cos why not?
 
 ## Usage
 
-python weather.py *city* *country*
+`python weather.py *city* *country*`
 
 if city is empty then it is Tampere by default
 
